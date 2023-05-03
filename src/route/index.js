@@ -5,6 +5,38 @@ const router = express.Router()
 
 // ================================================================
 
+var header = {
+  name: {
+    firstname: 'Ivan',
+    lastname: 'Ivanov',
+  },
+
+  position: 'Junior Fullstack JS Developer',
+
+  salary: '$600 в місяць',
+
+  address: 'Ivano-Frankivsk, 67/55 Hotkevicha St',
+}
+
+var footer = {
+  social: {
+    email: {
+      text: 'ivanov@mail.com',
+      href: 'mailto:ivanov@mail.com',
+    },
+    phone: {
+      text: '+380670000123',
+      href: 'tel:+380670000123',
+    },
+    linkedin: {
+      text: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/dmytro-test',
+    },
+  },
+}
+
+// ================================================================
+
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
@@ -24,44 +56,225 @@ router.get('/summary', function (req, res) {
   res.render('summary', {
     // ↙ сюди вводимо JSON дані
 
-    title: 'Resume',
-
-    name: {
-      firstname: 'Ivan',
-      lastname: 'Ivanov',
+    page: {
+      title: 'Resume | Summary',
     },
 
-    position: 'Junior Fullstack JS Developer',
+    header,
 
-    salary: ' $600 в місяць',
-
-    summary: {
-      title:'Summary',
-      text: `Open-minded for new technologies, with 1 years of
+    main: {
+      summary: {
+        title: 'Summary',
+        text: `Open-minded for new technologies, with 1 years of
       experience in development. Whenever I start to
       work on a new project I learn the domain and try
       to understand the idea of the project. Good team
-      player, every colleague is a friend to me.`,
-    }
+      player, every colleague is a friend to me`,
+      },
 
-    social: {
-      email: {
-        text: 'ivanov@mail.com',
-        href: 'mailto:ivanov@mail.com',
-      },
-      phone: {
-        text: '+380670000123',
-        href: 'tel:+380670000123',
-      },
-      linkedin: {
-        text: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/dmytro-test',
+      experience: {
+        title: 'Other experience',
+        text: `Pet project for parsing sport betting data from
+      different platforms ( odds ) and sport statistics
+      ( tournament position, goals etc), analyzing by
+      simple mathematics models and preparing
+      probability for such events like: money line -
+      first win / draw / second win, totals etc`,
       },
     },
+
+    footer,
   })
 })
 
 // ================================================================
+
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/skills', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('skills', {
+    // ↙ сюди вводимо JSON дані
+
+    page: {
+      title: 'Resume | Skills',
+    },
+
+    header,
+
+    main: {
+      skills: [
+        {
+          name: 'Html',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'Handlebars',
+          point: 10,
+          isTop: true,
+        },
+        {
+          name: 'VS cod & NPM',
+          point: 9,
+          isTop: false,
+        },
+        {
+          name: 'Git & Terminal',
+          point: 7,
+        },
+        {
+          name: 'React.js',
+          point: 0,
+        },
+        {
+          name: 'PHP',
+          point: null,
+        },
+      ],
+
+      hobbies: [
+        {
+          name: 'guitar play',
+          isMain: true,
+        },
+        {
+          name: 'playing chess',
+          isMain: true,
+        },
+        {
+          name: 'hiking in the mountains',
+          isMain: false,
+        },
+      ],
+    },
+
+    footer,
+  })
+})
+
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/education', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('education', {
+    // ↙ сюди вводимо JSON дані
+
+    page: {
+      title: 'Resume | Education',
+    },
+
+    header,
+
+    main: {
+      educations: [
+        {
+          name: 'IT-Brains',
+          isEnd: false,
+        },
+        {
+          name: 'Lviv State University of the Ministry of Internal Affairs',
+          isEnd: true,
+        },
+        {
+          name: 'Higher professional school of service maintenance of equipment',
+          isEnd: true,
+        },
+      ],
+
+      certificates: [
+        {
+          name: 'Diploma of electromechanics in repair and maintenance of computing equipment',
+          id: 1,
+        },
+        {
+          name: 'Bachelors degree in law',
+          id: 2,
+        },
+        {
+          name: 'Full stack developer certificate',
+          id: 3,
+        },
+      ],
+    },
+
+    footer,
+  })
+})
+
+// ================================================================
+
+//              ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/work', function (req, res) {
+  //             ↙ cюди вводимо назву файлу з сontainer
+  res.render('work', {
+    // ↙ сюди вводимо JSON дані
+
+    layout: 'big',
+
+    page: {
+      title: 'Resume | Work',
+    },
+
+    header,
+
+    main: {
+      works: [
+        {
+          position: 'Junior Fullstack developer',
+          company: {
+            name: 'IT-Brains',
+            url: 'https://it-brains.com.ua/',
+          },
+          duration: {
+            from: '10.10.2022',
+            to: null,
+          },
+
+          projectAmount: 3,
+
+          projects: [
+            {
+              name: 'Resume',
+              url: 'https://resume.com.ua/',
+              about:
+                'He study of bacteria is known as bacteriology, a branch of microbiology.',
+              stacks: [
+                {
+                  name: 'React.js',
+                },
+                {
+                  name: 'HTML / CSS',
+                },
+                {
+                  name: 'Node.js',
+                },
+              ],
+              awards: [
+                {
+                  name: 'Among the first life forms to appear on Earth.',
+                },
+                {
+                  name: 'Humans and most other animals carry millions of bacteria.',
+                },
+              ],
+
+              stackAmount: 3,
+              awardAmount: 2,
+            },
+          ],
+        },
+      ],
+    },
+
+    footer,
+  })
+})
+
+// Підключаємо роутер до бек-енду
+module.exports = router
 
 // Підключаємо роутер до бек-енду
 module.exports = router
