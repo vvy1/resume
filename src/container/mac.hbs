@@ -1,0 +1,99 @@
+<main>
+  <h1>{{name}}</h1>
+  <em>
+    <p>{{description}}</p>
+    <div>Price: ${{price}}</div>
+    <br />
+    <div>Category: {{category}}</div>
+  </em>
+</main>
+<hr />
+<section>
+  <h2>Features:</h2>
+  {{#with features}}
+    <h3>Processor:</h3>
+    {{#with processor}}
+      <div>Brand: {{brand}}</div>
+      <div>Model: {{model}}</div>
+      <div>Speed: {{speed}}</div>
+      <div>Cores: {{cores}}</div>
+      <div>Cache: {{cache}}</div>
+    {{/with}}
+
+    <h3>Memory:</h3>
+    {{#with memory}}
+      <div>Type: {{type}}</div>
+      <div>Size: {{size}}</div>
+      <div>Speed: {{speed}}</div>
+    {{/with}}
+
+    <h3>Storage:</h3>
+    {{#with storage}}
+      <div>Type: {{type}}</div>
+      <div>Size: {{size}}</div>
+    {{/with}}
+
+    <h3>Display:</h3>
+    {{#with display}}
+      <div>Size: {{size}}</div>
+      <div>Resolution: {{resolution}}</div>
+      <div>Technology: {{technology}}</div>
+      <div>Color space: {{color_space}}</div>
+      <div>Brightness: {{brightness}}</div>
+      <div>Refresh rate: {{refresh_rate}}</div>
+    {{/with}}
+
+    <h3>Graphics:</h3>
+    {{#with graphics}}
+      <div>Brand: {{brand}}</div>
+      <div>Model: {{model}}</div>
+      <div>Memory: {{memory}}</div>
+    {{/with}}
+
+    <h3>Ports:</h3>
+    <ul>
+      {{#each ports}}
+        <li>
+          <div>Type: {{type}}</div>
+          <div>Count: {{count}}</div>
+          {{#if features}}
+            <h4>Features:</h4>
+            <div>
+              <dir>
+                {{#each features}}
+                  <li>{{this}}</li>
+                {{/each}}
+              </dir>
+            </div>
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+
+    <h3>Battery:</h3>
+    {{#with battery}}
+      <div>Type: {{type}}</div>
+      <div>Capacity: {{capacity}}</div>
+      <div>Life: {{life}}</div>
+    {{/with}}
+
+    <h3>Weight:</h3>{{weight}}
+    <h3>Dimensions:</h3>
+    {{#with dimensions}}
+      <div>Height: {{height}}</div>
+      <div>Width: {{width}}</div>
+      <div>Depth: {{life}}</div>
+    {{/with}}
+
+    <h3>Operating system:</h3>{{operating_system}}
+    <h3>Accessories:</h3>
+    <ul>
+      {{#each accessories}}
+        <li>
+          <div><b>{{name}}</b></div>
+          <div>Price: ${{price}}</div>
+        </li>
+      {{/each}}
+    </ul>
+  {{/with}}
+</section>
