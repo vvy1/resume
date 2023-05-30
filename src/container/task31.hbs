@@ -1,0 +1,120 @@
+<nav class='text-start table'>
+  {{#with navigation}}
+    <span>
+      <ul>
+        {{#each links}}
+
+          <a href='{{href}}'>{{text}}</a>
+
+        {{/each}}
+        <span>
+          <a
+            href='{{button.href}}'
+            class='btn btn-primary'
+            role='button'
+            href='{{button.href}}'
+          >{{button.text}}</a>
+        </span>
+      </ul>
+    </span>
+  {{/with}}
+</nav>
+<br />
+<hr />
+
+<header>
+  {{#with header}}
+    <div>
+      <h1>{{title}}</h1>
+      <p>{{description}}</p>
+    </div>
+    <br />
+
+    <div>
+      <a
+        href='{{button.link}}'
+        class='btn btn-primary'
+        role='button'
+        href='{{button.link}}'
+      >{{button.text}}</a>
+    </div>
+  {{/with}}
+</header>
+<br />
+<hr />
+
+<main>
+  {{#with city}}
+    <h2>{{title}}</h2>
+
+    <ul class='card-list'>
+      {{#each cards}}
+        <div class='row col-6'>
+          <li class='card-item'>
+            <div class='card'>
+              <img
+                src='{{picture.src}}'
+                class='card-img-top'
+                alt='{{picture.alt}}'
+              />
+              <div class='card-body'>
+                <h4 class='card-title'>{{title}}</h4>
+                <p class='card-text'>{{description}}</p>
+                <a
+                  href='{{button.href}}'
+                  class='btn btn-primary'
+                >{{button.text}}</a>
+              </div>
+            </div>
+          </li>
+        </div>
+      {{/each}}
+    </ul>
+
+  {{/with}}
+</main>
+<br />
+<hr />
+
+<section>
+  {{#with winner}}
+    <h2>{{title}}</h2>
+    <table>
+      {{#with table}}
+        {{#each head}}
+          <li>{{this}}</li>
+        {{/each}}
+      {{/with}}
+    </table>
+  {{/with}}
+</section>
+<br />
+<hr />
+
+<section>
+  {{#with gallery}}{{/with}}
+</section>
+<br />
+<hr />
+
+<section>
+  {{#with relaxion}}{{/with}}
+</section>
+<br />
+<hr />
+
+<section>
+  {{#with rest}}{{/with}}
+</section>
+<br />
+<hr />
+
+<section>
+  {{#with proposition}}{{/with}}
+</section>
+<br />
+<hr />
+
+<footer>
+  {{#with footer}}{{/with}}
+</footer>
