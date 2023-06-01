@@ -13,7 +13,7 @@
         <div>
           <ul>
             {{#each works}}
-              <li>
+              <li class="mb-3">
                 <div>{{position}}</div>
 
                 <br>
@@ -51,21 +51,21 @@
                     <li>
                       <div>{{> link text=name href=url blank=true noLine=true }}</div>
 
-                      <br>
+                      
 
-                      <div>
+                      <div class="my-3">
                         <p>{{about}}</p>
                       </div>
 
-                      <br>
+                      
 
                       <div>
                         <em>Project stacks ({{stackAmount}})</em>
                       </div>
 
-                      <br>
+                      
 
-                      <div>
+                      <div class="my-3">
                         <ul>
                           {{#each stacks}}
                            <li>
@@ -75,15 +75,15 @@
                         </ul>
                       </div>
                       
-                      <br>
+                      
 
                       <div>
                         <em>Project awards ({{awardAmount}})</em>
                       </div>
 
-                        <br>
+                        
 
-                      <div>
+                      <div class="my-3">
                         <ul>
                           {{#each awards}}
                             <li>
@@ -99,7 +99,7 @@
 
               </li>
 
-              <br>
+              
             {{/each}}  
           </ul>
         </div>
