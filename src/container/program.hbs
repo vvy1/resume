@@ -2,7 +2,7 @@
   {{#with excursion}}
     <main>
       <h1>Excursion:</h1>
-      <div>
+      <div class='mt-3'>
         <h2>{{name}}</h2>
         <div>{{location.city}}</div>
         <div>{{location.country}}</div>
@@ -10,7 +10,7 @@
       </div>
     </main>
 
-    <hr />
+    <hr class='my-5' />
 
     <section>
       <h2>Program:</h2>
@@ -65,9 +65,9 @@
                       </ul>
                     </div>
                   {{/with}}
-                  <br />
+
                 {{else}}
-                  <div>
+                  <div class='mt-3'>
                     <h3>Venue:</h3>
                     <h4>{{venue.name}}</h4>
                     <address>
@@ -82,9 +82,7 @@
                     </address>
                   </div>
 
-                  <br />
-
-                  <div>
+                  <div class='mt-3'>
                     <h3>Performers:</h3>
                     <ul>
                       {{#each performers}}
@@ -97,9 +95,7 @@
                   </div>
                 {{/if}}
 
-                <br />
-
-                <div>
+                <div class='mt-3'>
                   <em>Guide:</em>
                   {{#with guide}}
                     <strong>{{name}}</strong>

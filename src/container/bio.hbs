@@ -3,14 +3,16 @@
   <em>
     <date>Birthdate: {{birthdate}}</date>
     <div>In: {{birthplace}}</div>
-    <br />
-    <date>Deathdate: {{deathdate}}</date>
-    <div>In: {{deathplace}}</div>
-    <br />
+
+    <div class='my-3'>
+      <date>Deathdate: {{deathdate}}</date>
+      <div>In: {{deathplace}}</div>
+    </div>
+
     <div>Nationality: {{nationality}}</div>
     <div>Occupation: {{occupation}}</div>
-    <br />
-    <div>
+
+    <div class='mt-3'>
       <strong>Known for: </strong>
       <ul>
         {{#each known_for}}
@@ -20,7 +22,7 @@
     </div>
   </em>
 </main>
-<hr />
+<hr class='my-5' />
 <section>
   <h2>Education: </h2>
   <ul>
@@ -51,10 +53,10 @@
       <li>
         <em>{{name}}</em>
         <div>Relationship: {{relationship}}</div>
-        <div>
+        <div class='mb-3'>
           <date>Years: {{years}}</date>
         </div>
-        <br />
+
       </li>
     {{/each}}
   </ul>
@@ -71,7 +73,7 @@
   </ul>
 </section>
 
-<hr />
+<hr class='my-5' />
 
 <section>
   <h2>Influences: </h2>
@@ -100,7 +102,7 @@
       </li>
     {{/each}}
   </ul>
-  <hr />
+  <hr class='my-5' />
 
   <h2>Major discoveries: </h2>
   <ul>
