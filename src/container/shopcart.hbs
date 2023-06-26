@@ -8,67 +8,67 @@
           <a href='{{href}}'>{{text}}</a>
 
         {{/each}}
+        <span class='nav-item'>Disabled</span>
       </div>
     </div>
   {{/with}}
 
 </nav>
 
-<section class='mt-5'>
-  {{#with newsBlock}}
-    <h1 class='text-center'>{{title}}</h1>
-
-    <div class='row'>
-      {{#each cards}}
-        <div class='col-3 g-2'>
-          <div class='card text-bg-dark'>
-            <h5 class='card-header'>{{title}}
-              <span
-                class='badge text-bg-success rounded-pill'
-              >{{#if isTop}}Is Top{{/if}}</span>
-              <span
-                class='badge text-bg-danger rounded-pill'
-              >{{#if isNew}}Is New{{/if}}</span>
-            </h5>
-            <div class='card-body'>
-              <p>{{description}}</p>
-            </div>
-          </div>
-        </div>
-      {{/each}}
-    </div>
+<header>
+  {{#with header}}
+    <h1 class='mt-5'>{{title}}</h1>
+    {{#with button}}
+      <a class='btn btn-outline-secondary' href='{{link}}'>
+        {{text}}
+      </a>
+    {{/with}}
   {{/with}}
-</section>
+</header>
 <hr class='my-5' />
 
 <section>
-  {{#with goodsBlock}}
-    <nav>
-      <ul class='nav'>
-        {{#each tabs}}
-          <li class='nav-item nav-tabs'>
-            <div class='col-12 g-4'>
-              {{#if isActive}}
-                <a
-                  href='#'
-                  class='nav-link active'
-                >{{text}}</a>
+{{> cartGoodsItem}}
+</section>
+<hr class="my-5">
 
-              {{else}}{{#isDisabled}}
-                  <a
-                    href='#'
-                    class='nav-link disabled'
-                  >{{text}}</a>
-                {{else}}
-                  <a href='#' class='nav-link'>{{text}}</a>
-                {{/isDisabled}}{{/if}}
-            </div>
-          </li>
+<section>
+  <div>
+    {{#with total}}
+      <div>
+        <h4>{{title}}</h4>
+      </div>
+
+      <div class="display-5">
+        {{amount}}
+      </div>
+
+      <div>{{delivery}}</div>
+
+      <div>
+        {{#each buttons}}
+          {{#if isSuccess}}
+          <div class="my-3">
+            <a class="btn btn-success" href="{{link}}">{{text}}</a>
+          </div>
+          {{else}}{{#isOutline}}
+          <div>
+            <a class="btn btn-outline-success" href="{{link}}">{{text}}</a>
+          </div>
+          {{/isOutline}}
+          {{/if}}
+
         {{/each}}
-      </ul>
-    </nav>
+      </div>
+    {{/with}}
+  </div>
+</section>
+<hr class="my-5">
 
-    <section class='mt-5'>
+<section>
+  {{#with goodsOtherBlock}}
+    <h2 class="text-center">{{title}}</h2>
+    <div class='mt-5'>
       <div class='row'>
         {{#each cards}}
           <div class='col-4 g-3'>
@@ -83,21 +83,19 @@
                 <p>{{description}}</p>
                 <span
                   class='badge text-bg-warning rounded-pill'
-                >{{#if isHot}}Is Hot{{/if}}</span>
+                  >{{#if isHot}}HOT!{{/if}}</span>
                 <span
                   class='badge text-bg-info rounded-pill'
-                >{{#if isNew}}Is New{{/if}}</span>
+                    >{{#if idNew}}Is New{{/if}}</span>
               </div>
             </div>
           </div>
-
         {{/each}}
-
       </div>
-    </section>
+    </div>
   {{/with}}
 </section>
-<hr class='my-5' />
+<hr class="my-5">
 
 <section>
   {{#with subscribe}}
@@ -106,32 +104,13 @@
       <p>{{description}}</p>
 
       {{#each buttons}}
-        <a href='{{link}}'><button
-            class='my-1 text-bg-info'
-          >{{text}}</button></a>
+        <div><a href='{{link}}' type="button" class='my-1 btn btn-primary'>{{text}}</a></div>
       {{/each}}
 
     </div>
   {{/with}}
 </section>
-<hr class='my-5' />
-
-<section>
-  {{#with service}}
-    <div class='card card-body text-bg-success text-center'>
-      <h2>{{title}}</h2>
-      <p>{{description}}</p>
-
-      {{#each buttons}}
-        <a href='{{link}}'><button
-            class='my-1 text-bg-info'
-          >{{text}}</button></a>
-      {{/each}}
-
-    </div>
-  {{/with}}
-</section>
-<hr class='my-5' />
+<hr class="mt-5">
 
 <footer>
   <div class='container'>
