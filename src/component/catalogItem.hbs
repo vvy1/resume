@@ -1,0 +1,68 @@
+<div class='row row-cols-1 row-cols-md-2 row-cols-lg-2'>
+
+  {{#each goodsList}}
+    <div class='col mb-2'>
+
+      <div class='card'>
+        <img
+          src='{{img}}'
+          class='card-img-top'
+          alt='gadget'
+        />
+        <div class='card-body'>
+          <span
+            class='badge text-bg-warning rounded-pill'
+          >{{#if isHot}}Is Hot{{/if}}</span>
+          <span
+            class='badge text-bg-info rounded-pill'
+          >{{#if isNew}}Is New{{/if}}</span>
+          <span
+            class='badge text-bg-info rounded-pill'
+          >{{#if isFast}}Is Fast{{/if}}</span>
+          <span
+            class='badge text-bg-info rounded-pill'
+          >{{#if isFree}}Is Free{{/if}}</span>
+          <h5 class='card-title my-2'>{{name}}</h5>
+          <div>
+            {{#with review}}
+              <span>{{amount}}</span>
+              <span>{{text}}</span>
+            {{/with}}
+          </div>
+          <h4 class='my-2'>{{price}}</h4>
+          <span>{{delivery}}</span>
+          <div>
+            {{#each buttons}}
+              {{#if isPrimary}}
+                <div>
+                  <a
+                    href='{{link}}'
+                    class='btn btn-primary my-2'
+                  >{{text}}</a>
+                </div>
+              {{else}}{{#isSecondary}}
+                  <div>
+                    <a
+                      href='{{link}}'
+                      class='btn btn-secondary my-2'
+                    >{{text}}</a>
+                  </div>
+                {{/isSecondary}}
+              {{/if}}
+            {{/each}}
+          </div>
+          <ul class='mt-2'>
+            {{#each characteristics}}
+              <li>
+                <span>{{title}}</span>:
+                <span>{{value}}</span>
+              </li>
+            {{/each}}
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  {{/each}}
+
+</div>
