@@ -44,7 +44,142 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+
+    header: {
+      name: 'Volodymyr Yasinskyi',
+      project: 'Resume project',
+    },
+
+    body: {
+      title: 'List of pages',
+      paragraph:
+        'This project is fundamental to my career path in the field of programming. I enjoyed working on it and learning to build and expand my horizons using modern technologies. I am sure that this is only the beginning of my development and I see before me a great potential for expanding my abilities and opportunities. This project is just superficial information about me as an ordinary person, but in fact this lake of information described here is a real limitless and deep ocean of possibilities and dreams that cannot be contained in these few pages. And I am sure that this is the case not only with me, but also with everyone who understands well, how to be the one, who wears this deep in meaning and honorable name "Human".',
+      buttons: [
+        {
+          summary: {
+            text: 'Summary',
+            link: '/summary',
+          },
+        },
+        {
+          skills: {
+            text: 'Skills',
+            link: '/skills',
+          },
+        },
+        {
+          education: {
+            text: 'Education',
+            link: '/education',
+          },
+        },
+        {
+          work: {
+            text: 'Work',
+            link: '/work',
+          },
+        },
+        {
+          person: {
+            text: 'Person',
+            link: '/person',
+          },
+        },
+        {
+          bio: {
+            text: 'Biography',
+            link: '/bio',
+          },
+        },
+        {
+          program: {
+            text: 'Program',
+            link: '/program',
+          },
+        },
+        {
+          web: {
+            text: 'Web',
+            link: '/web',
+          },
+        },
+        {
+          js: {
+            text: 'Java Script',
+            link: '/js',
+          },
+        },
+        {
+          car: {
+            text: 'Car',
+            link: '/car',
+          },
+        },
+        {
+          mac: {
+            text: 'Mac',
+            link: '/mac',
+          },
+        },
+        {
+          facebook: {
+            text: 'Facebook',
+            link: '/facebook',
+          },
+        },
+        {
+          task21: {
+            text: 'Task21',
+            link: '/task21',
+          },
+        },
+        {
+          task22: {
+            text: 'Task22',
+            link: '/task22',
+          },
+        },
+        {
+          task31: {
+            text: 'Task31',
+            link: '/task31',
+          },
+        },
+        {
+          shophome: {
+            text: 'Shophome',
+            link: '/shophome',
+          },
+        },
+        {
+          shoporder: {
+            text: 'Shoporder',
+            link: '/shoporder',
+          },
+        },
+        {
+          shopcart: {
+            text: 'Shopcart',
+            link: '/shopcart',
+          },
+        },
+        {
+          shopreview: {
+            text: 'Shopreview',
+            link: '/shopreview',
+          },
+        },
+        {
+          shopcatalog: {
+            text: 'Shopcatalog',
+            link: '/shopcatalog',
+          },
+        },
+      ],
+    },
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
